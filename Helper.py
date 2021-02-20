@@ -27,7 +27,7 @@ class Stat(object):
         json.load(f)
     
    
-    def my_streak(self): #有bug，add不了
+    def my_streak(self): 
         mode=input("[streak]>")
         if mode=="show":
 
@@ -37,7 +37,7 @@ class Stat(object):
             print("error")
 
 
-    def point(self): #有bug，add不了
+    def point(self): 
         mode=input("[point]>")
         if mode=="show":
 
