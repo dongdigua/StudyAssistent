@@ -23,15 +23,19 @@ class Tlist(object):
 
 
 class Stat(object):
-    with open('stat.json'.'w+') as f:
-        json.load(f)
-    
+    with open('stat.json','r+') as f:
+        stat=json.load(f)
    
     def my_streak(self): 
         mode=input("[streak]>")
         if mode=="show":
+            print("your streak is: ",Stat.stat["streak"])
+
 
         elif mode=="add":
+            Stat.stat["streak"] += 1
+            with open('stat.json','r+') as f:
+                json.dump(Stat.stat,f)
 
         else:
             print("error")
@@ -40,10 +44,17 @@ class Stat(object):
     def point(self): 
         mode=input("[point]>")
         if mode=="show":
+            print("your point is: ",Stat.stat["point"])
 
         elif mode=="add":
+            Stat.stat["point"] += 1
+            with open('stat.json','r+') as f:
+                json.dump(Stat.stat,f)
 
         elif mode=="del":
+            Stat.stat["point"] -= 1
+            with open('stat.json','r+') as f:
+                json.dump(Stat.stat,f)
 
         else:
             print('error')
@@ -61,7 +72,8 @@ class Core(object):
 
 
 
-digua=Tlist()
-digua.tlist()
+digua=Stat()
+digua.my_streak()
+digua.point()
 
 
