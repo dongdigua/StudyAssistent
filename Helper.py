@@ -1,5 +1,6 @@
 import sqlite3 as sq
 import json
+import time
 
 class Tlist(object):
     shuju=sq.connect("./shuju.db")
@@ -60,7 +61,8 @@ class Stat(object):
             print('error')
                   
     def tomato(self):
-        pass
+        mode=input("[tomato]>")
+        if mode == "start":
 
 class Core(object):
 
